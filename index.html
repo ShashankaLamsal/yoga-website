@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashtanga Yoga - Find Your Inner Peace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: '#9CAF88',
+                        cream: '#F7F5F3',
+                        earth: '#8B7355'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm fixed w-full top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-primary flex items-center gap-2">
+                        <img src="images/yogaLogo.png" alt="Yoga Logo" class="w-10 h-10">
+                        <span>Ashtanga Vinyansa Yoga</span>
+                    </h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About Us</a>
+                        <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300">Services</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary">About Us</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary">Services</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slideshow Section -->
+    <section id="home" class="relative h-screen overflow-hidden">
+        <div class="slideshow-container relative w-full h-full">
+            <!-- Slide 1 -->
+            <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+                <img src="images/meditation.jpg" 
+                     alt="Meditation in nature" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
+                    <div class="text-white max-w-2xl">
+                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Breathe <span class="text-primary">Mindfully</span></h2>
+                        <p class="text-xl md:text-2xl mb-8 opacity-90">Connect with your breath and discover the power of mindful living</p>
+                        <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                            Join Our Classes
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide active absolute inset-0 transition-opacity duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+                <img src="images/yoga-2.jpg" 
+                     alt="Yoga class in peaceful studio" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
+                    <div class="text-white max-w-2xl">
+                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Find Your <span class="text-primary font-bold">Inner Peace</span></h2>
+                        <p class="text-xl md:text-2xl mb-8 opacity-90">Transform your mind, body, and spirit through the ancient practice of yoga</p>
+                        <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                            Start Your Journey
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+                <img src="images/yoga-1.jpg" 
+                     alt="Peaceful yoga pose" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
+                    <div class="text-white max-w-2xl">
+                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Strengthen <span class="text-primary">Your Body</span></h2>
+                        <p class="text-xl md:text-2xl mb-8 opacity-90">Build flexibility, strength, and balance through our expert-guided sessions</p>
+                        <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                            View Services
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+
+        <!-- Slide Navigation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
+            <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300 active" data-slide="0"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-slide="1"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-slide="2"></button>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300" id="prevSlide">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300" id="nextSlide">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+    </section>
+
+    <!-- Features Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-6">Why Choose <span class="text-primary">Ashtanga Vinyansa Yoga</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the transformative power of yoga in our peaceful, welcoming environment</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sage/20 transition-colors duration-300">
+                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">Experienced Instructors</h3>
+                    <p class="text-gray-600 leading-relaxed">Learn from certified yoga teachers with years of experience in guiding students of all levels</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sage/20 transition-colors duration-300">
+                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">Peaceful Environment</h3>
+                    <p class="text-gray-600 leading-relaxed">Practice in our serene studio designed to promote relaxation and inner peace</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sage/20 transition-colors duration-300">
+                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">All Levels Welcome</h3>
+                    <p class="text-gray-600 leading-relaxed">Whether you're a beginner or advanced practitioner, we have classes tailored for you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-sage/5">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-6">Ready to Start Your <span class="text-primary">Yoga Journey</span>?</h2>
+            <p class="text-xl text-gray-600 mb-10">Join our welcoming community and discover the benefits of regular yoga practice</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                    Book Your First Class
+                </button>
+                <button class="border-2 border-sage text-primary hover:bg-sage hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300">
+                    View Our Services
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
