@@ -3,111 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashtanga Yoga - Find Your Inner Peace</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Ashtanga Vinyansa Yoga</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sage: '#9CAF88',
-                        cream: '#F7F5F3',
-                        earth: '#8B7355'
-                    }
-                }
-            }
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
         }
-    </script>
-</head>
-<body class="bg-cream text-gray-800">
-    <!-- Navigation -->
-    <nav class="bg-white/90 backdrop-blur-sm fixed w-full top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-2xl font-bold text-primary flex items-center gap-2">
-                        <img src="images/yogaLogo.png" alt="Yoga Logo" class="w-10 h-10">
-                        <span>Ashtanga Vinyansa Yoga</span>
-                    </h1>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About Us</a>
-                        <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300">Services</a>
-                        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary">About Us</a>
-                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary">Services</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        /* Custom red color palette */
+        :root {
+            --red-50: #fef2f2;
+            --red-100: #fee2e2;
+            --red-200: #fecaca;
+            --red-500: #dc2626;
+            --red-600: #dc2626;
+            --red-700: #b91c1c;
+            --red-800: #991b1b;
+        }
 
+        /* Slideshow styles */
+        .slide {
+            opacity: 0;
+            transition: opacity 1000ms ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-dot.active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-red-600">Inner Balance Yoga</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-red-600 transition-colors">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-red-600 transition-colors">About</a>
+                <a href="#classes" class="text-gray-700 hover:text-red-600 transition-colors">Classes</a>
+                <a href="#instructor" class="text-gray-700 hover:text-red-600 transition-colors">Instructor</a>
+                <a href="#contact" class="text-gray-700 hover:text-red-600 transition-colors">Contact</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <nav class="flex flex-col space-y-4 p-4">
+                <a href="#home" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">About</a>
+                <a href="#classes" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Classes</a>
+                <a href="#instructor" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Instructor</a>
+                <a href="#contact" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    
     <!-- Hero Slideshow Section -->
     <section id="home" class="relative h-screen overflow-hidden">
         <div class="slideshow-container relative w-full h-full">
             <!-- Slide 1 -->
-            <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+            <div class="slide active absolute inset-0 transition-opacity duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-red-900/20 z-15"></div>
                 <img src="images/meditation.jpg" 
                      alt="Meditation in nature" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
                     <div class="text-white max-w-2xl">
-                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Breathe <span class="text-primary">Mindfully</span></h2>
+                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Breathe <span class="text-red-300 font-bold">Mindfully</span></h2>
                         <p class="text-xl md:text-2xl mb-8 opacity-90">Connect with your breath and discover the power of mindful living</p>
-                        <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
                             Join Our Classes
                         </button>
                     </div>
                 </div>
             </div>
             <!-- Slide 2 -->
-            <div class="slide active absolute inset-0 transition-opacity duration-1000">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
-                <img src="images/yoga-2.jpg" 
+            <div class="slide absolute inset-0 transition-opacity duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-red-900/20 z-15"></div>
+                <img src="images/yoga-1.jpg" 
                      alt="Yoga class in peaceful studio" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
                     <div class="text-white max-w-2xl">
-                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Find Your <span class="text-primary font-bold">Inner Peace</span></h2>
+                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Find Your <span class="text-red-300 font-bold">Inner Peace</span></h2>
                         <p class="text-xl md:text-2xl mb-8 opacity-90">Transform your mind, body, and spirit through the ancient practice of yoga</p>
-                        <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
                             Start Your Journey
                         </button>
                     </div>
                 </div>
             </div>
             <!-- Slide 3 -->
-            <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
-                <img src="images/yoga-1.jpg" 
+            <div class="slide absolute inset-0 transition-opacity duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-red-900/20 z-15"></div>
+                <img src="images/yoga-2.jpg" 
                      alt="Peaceful yoga pose" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
                     <div class="text-white max-w-2xl">
-                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Strengthen <span class="text-primary">Your Body</span></h2>
+                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Strengthen <span class="text-red-300 font-bold">Your Body</span></h2>
                         <p class="text-xl md:text-2xl mb-8 opacity-90">Build flexibility, strength, and balance through our expert-guided sessions</p>
-                        <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
                             View Services
                         </button>
                     </div>
                 </div>
             </div>
-            
-
-            
         </div>
 
         <!-- Slide Navigation -->
@@ -129,64 +150,245 @@
             </svg>
         </button>
     </section>
-
-    <!-- Features Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-6">Why Choose <span class="text-primary">Ashtanga Vinyansa Yoga</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the transformative power of yoga in our peaceful, welcoming environment</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sage/20 transition-colors duration-300">
-                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-red-800 mb-8">About Ashtanga Vinyansa Yoga</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    At Ashtanga Vinyansa Yoga , we believe that yoga is more than just physical exercise—it's a journey 
+                    toward self-discovery, inner peace, and holistic wellness. Our studio provides a welcoming 
+                    sanctuary where practitioners of all levels can explore the transformative power of yoga.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-red-600">🧘</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-2">Mindful Practice</h3>
+                        <p class="text-gray-600">Connect with your breath and find inner peace through mindful movement.</p>
                     </div>
-                    <h3 class="text-2xl font-medium text-gray-800 mb-4">Experienced Instructors</h3>
-                    <p class="text-gray-600 leading-relaxed">Learn from certified yoga teachers with years of experience in guiding students of all levels</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sage/20 transition-colors duration-300">
-                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-red-600">💪</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-2">Strength & Flexibility</h3>
+                        <p class="text-gray-600">Build physical strength while improving flexibility and balance.</p>
                     </div>
-                    <h3 class="text-2xl font-medium text-gray-800 mb-4">Peaceful Environment</h3>
-                    <p class="text-gray-600 leading-relaxed">Practice in our serene studio designed to promote relaxation and inner peace</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sage/20 transition-colors duration-300">
-                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-red-600">🌟</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-2">Personal Growth</h3>
+                        <p class="text-gray-600">Embark on a journey of self-discovery and personal transformation.</p>
                     </div>
-                    <h3 class="text-2xl font-medium text-gray-800 mb-4">All Levels Welcome</h3>
-                    <p class="text-gray-600 leading-relaxed">Whether you're a beginner or advanced practitioner, we have classes tailored for you</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-sage/5">
-        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-6">Ready to Start Your <span class="text-primary">Yoga Journey</span>?</h2>
-            <p class="text-xl text-gray-600 mb-10">Join our welcoming community and discover the benefits of regular yoga practice</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
-                    Book Your First Class
-                </button>
-                <button class="border-2 border-sage text-primary hover:bg-sage hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300">
-                    View Our Services
-                </button>
+    <!-- Classes Section -->
+    <section id="classes" class="py-20 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">Class Schedule</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-red-700 mb-4">Morning</h3>
+                        <h4 class="text-xl font-semibold text-red-700 mb-4">5:30am to 8:30am</h4>
+                        <p class="text-gray-600 mb-6">Start your day with energizing yoga flow</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">All levels welcome</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Mats and props provided</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Small class sizes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-red-700 mb-4">Afternoon</h3>
+                        <h4 class="text-xl font-semibold text-red-700 mb-4">3:00pm to 6:30pm</h4>
+                        <p class="text-gray-600 mb-6">Afternoon sessions for mind-body balance</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">All levels welcome</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Mats and props provided</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Small class sizes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Instructor Section -->
+    <section id="instructor" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">Meet Your Instructor</h2>
+                
+                <div class="bg-red-50 rounded-lg p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="w-48 h-48 bg-red-200 rounded-full flex items-center justify-center">
+                            <span class="text-6xl text-red-600">👩‍🏫</span>
+                        </div>
+                        
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-red-800 mb-4">Yakthumma Ma'am</h3>
+                            <p class="text-lg text-red-700 mb-4">Certified Yoga Instructor • 10+ Years Experience</p>
+                            
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                Our Ma'am brings over a decade of yoga experience and a deep passion for helping others 
+                                discover their inner balance. Certified in multiple yoga styles, she creates a 
+                                welcoming environment where students can safely explore their practice and grow.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                                <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium">
+                                    Asan Yoga
+                                </span>
+                                <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium">
+                                    Vinyasa Flow
+                                </span>
+                                <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium">
+                                    Restorative Yoga
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">Get in Touch</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-red-700 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Exact Address<br>Kalanki, Kathmandu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i data-lucide="phone" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">9855555555</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i data-lucide="mail" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">hello@vinyasayoga.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i data-lucide="clock" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Class Times</h4>
+                                    <p class="text-gray-600">
+                                        Morning: 5:30am to 8:30am<br>
+                                        Day: 3:00pm to 6:30pm
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold text-red-700 mb-6">Send us a Message</h3>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"
+                                    placeholder="Your Name"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea
+                                    id="message"
+                                    rows="5"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"
+                                    placeholder="Tell us about your yoga goals..."
+                                ></textarea>
+                            </div>
+                            
+                            <button
+                                type="submit"
+                                class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-4">Inner Balance Yoga</h3>
+                <p class="text-red-200 mb-8">
+                    Transform your body, mind, and spirit through the practice of yoga
+                </p>
+                
+                <div class="border-t border-red-700 pt-8">
+                    <p class="text-red-200">
+                        © 2024 Inner Balance Yoga. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
