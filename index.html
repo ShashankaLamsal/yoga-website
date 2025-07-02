@@ -10,15 +10,15 @@
         html {
             scroll-behavior: smooth;
         }
-        
+       
         .mobile-menu {
             display: none;
         }
-        
+       
         .mobile-menu.active {
             display: block;
         }
-        
+       
         /* Custom red color palette */
         :root {
             --red-50: #fef2f2;
@@ -29,19 +29,65 @@
             --red-700: #b91c1c;
             --red-800: #991b1b;
         }
-
+        
         /* Slideshow styles */
         .slide {
             opacity: 0;
             transition: opacity 1000ms ease-in-out;
         }
-        
+       
         .slide.active {
             opacity: 1;
         }
-        
+       
         .slide-dot.active {
             background-color: white;
+        }
+        
+        /* Bubble animation styles */
+        .bubble {
+            animation: breathe 4s ease-in-out infinite;
+            transform-origin: center center;
+        }
+        
+        .bubble:nth-child(1) { animation-delay: 0s; }
+        .bubble:nth-child(2) { animation-delay: 0.7s; }
+        .bubble:nth-child(3) { animation-delay: 1.4s; }
+        .bubble:nth-child(4) { animation-delay: 2.1s; }
+        .bubble:nth-child(5) { animation-delay: 2.8s; }
+        .bubble:nth-child(6) { animation-delay: 3.5s; }
+        
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.05); 
+            }
+        }
+        
+        @keyframes breathe-centered {
+            0%, 100% { 
+                transform: translateY(-50%) scale(1); 
+            }
+            50% { 
+                transform: translateY(-50%) scale(1.05); 
+            }
+        }
+        
+        /* Special animation for vertically centered bubbles */
+        .bubble:nth-child(3),
+        .bubble:nth-child(4) {
+            animation: breathe-centered 4s ease-in-out infinite;
+        }
+        
+        .feature-box {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -78,77 +124,132 @@
     </header>
 
     
-    <!-- Hero Slideshow Section -->
-    <section id="home" class="relative h-screen overflow-hidden">
-        <div class="slideshow-container relative w-full h-full">
-            <!-- Slide 1 -->
-            <div class="slide active absolute inset-0 transition-opacity duration-1000">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
-                <div class="absolute inset-0 bg-red-900/20 z-15"></div>
-                <img src="images/meditation.jpg" 
-                     alt="Meditation in nature" class="w-full h-full object-cover">
-                <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
-                    <div class="text-white max-w-2xl">
-                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Breathe <span class="text-red-300 font-bold">Mindfully</span></h2>
-                        <p class="text-xl md:text-2xl mb-8 opacity-90">Connect with your breath and discover the power of mindful living</p>
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
-                            Join Our Classes
-                        </button>
+    <!-- Main Container -->
+    <section id="home" class="min-h-[80vh] lg:h-[80vh] flex flex-col lg:flex-row overflow-hidden pt-20 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300">
+
+        <!-- Left Side - Floating Bubbles -->
+        <div class="w-full lg:w-3/5 p-4 lg:p-12 flex items-center justify-center relative order-1 lg:order-1">
+            <div class="bubble-container relative w-full max-w-2xl h-96 lg:h-full flex flex-col justify-center">
+                
+                <!-- Child Yoga - Top Left -->
+                <div class="bubble absolute top-0 left-0 w-32 sm:w-40 md:w-48 lg:w-56">
+                    <div class="feature-box bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer">
+                        <h3 class="text-xs sm:text-sm lg:text-lg font-semibold mb-1 text-center">Child Yoga, Meditation</h3>
+                        <p class="text-green-100 text-xs sm:text-xs lg:text-sm text-center">Nurturing mindfulness in young minds</p>
                     </div>
                 </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="slide absolute inset-0 transition-opacity duration-1000">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
-                <div class="absolute inset-0 bg-red-900/20 z-15"></div>
-                <img src="images/yoga-1.jpg" 
-                     alt="Yoga class in peaceful studio" class="w-full h-full object-cover">
-                <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
-                    <div class="text-white max-w-2xl">
-                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Find Your <span class="text-red-300 font-bold">Inner Peace</span></h2>
-                        <p class="text-xl md:text-2xl mb-8 opacity-90">Transform your mind, body, and spirit through the ancient practice of yoga</p>
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
-                            Start Your Journey
-                        </button>
+                
+                <!-- Teachers Training - Top Right -->
+                <div class="bubble absolute top-8 sm:top-7 right-20 w-36 sm:w-44 md:w-52 lg:w-60">
+                    <div class="feature-box bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer">
+                        <h3 class="text-xs sm:text-sm lg:text-lg font-semibold mb-1 text-center">Teachers Training</h3>
+                        <p class="text-blue-100 text-xs sm:text-xs lg:text-sm text-center">International Teacher Training, Hatha Yoga</p>
                     </div>
                 </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="slide absolute inset-0 transition-opacity duration-1000">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
-                <div class="absolute inset-0 bg-red-900/20 z-15"></div>
-                <img src="images/yoga-2.jpg" 
-                     alt="Peaceful yoga pose" class="w-full h-full object-cover">
-                <div class="absolute inset-0 flex items-center justify-start z-20 px-8 md:px-16">
-                    <div class="text-white max-w-2xl">
-                        <h2 class="text-5xl md:text-7xl font-light mb-6 leading-tight">Strengthen <span class="text-red-300 font-bold">Your Body</span></h2>
-                        <p class="text-xl md:text-2xl mb-8 opacity-90">Build flexibility, strength, and balance through our expert-guided sessions</p>
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
-                            View Services
-                        </button>
+                
+                <!-- Sound Healing - Center Left -->
+                <div class="bubble absolute top-1/2 left-2 sm:left-4 lg:left-8 transform -translate-y-1/2 w-40 sm:w-48 md:w-56 lg:w-64">
+                    <div class="feature-box bg-gradient-to-r from-red-500 to-red-600 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer">
+                        <h3 class="text-xs sm:text-sm lg:text-lg font-semibold mb-1 text-center">Singing Bowl, Sound Healing</h3>
+                        <p class="text-red-100 text-xs sm:text-xs lg:text-sm text-center">Healing vibrations for inner peace</p>
+                    </div>
+                </div>
+                
+                <!-- Reiki Healing - Center Right -->
+                <div class="bubble absolute top-1/2 right-1 sm:right-2 lg:right-4 transform -translate-y-1/2 w-36 sm:w-44 md:w-52 lg:w-60">
+                    <div class="feature-box bg-gradient-to-r from-orange-500 to-orange-600 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer">
+                        <h3 class="text-xs sm:text-sm lg:text-lg font-semibold mb-1 text-center">Reiki Healing, Reiki Dikchhya</h3>
+                        <p class="text-orange-100 text-xs sm:text-xs lg:text-sm text-center">Energy healing and spiritual awakening</p>
+                    </div>
+                </div>
+                
+                <!-- Seven Chakra - Bottom Left -->
+                <div class="bubble absolute bottom-8 sm:bottom-12 left-1 sm:left-2 lg:left-4 w-32 sm:w-36 md:w-44 lg:w-52">
+                    <div class="feature-box bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer">
+                        <h3 class="text-xs sm:text-sm lg:text-lg font-semibold mb-1 text-center">Seven Chakra Active</h3>
+                        <p class="text-purple-100 text-xs sm:text-xs lg:text-sm text-center">Balance your energy centers</p>
+                    </div>
+                </div>
+                
+                <!-- Meditation - Bottom Center -->
+                <div class="bubble absolute bottom-0 right-2 sm:right-4 lg:right-8 w-44 sm:w-52 md:w-60 lg:w-72">
+                    <div class="feature-box bg-gradient-to-r from-teal-500 to-teal-600 text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer">
+                        <h3 class="text-xs sm:text-sm lg:text-lg font-semibold mb-1 text-center">Meditation, Pranayam, Banda, Mudra, Asanas</h3>
+                        <p class="text-teal-100 text-xs sm:text-xs lg:text-sm text-center">Complete yogic practices for holistic wellness</p>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Right Side - Smaller Slideshow -->
+        <div class="w-full lg:w-2/5 relative p-4 lg:p-8 flex items-center order-2 lg:order-2">
+            <div class="slideshow-container relative w-full h-64 sm:h-80 lg:h-3/4 lg:max-h-96 bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
 
-        <!-- Slide Navigation -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
-            <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300 active" data-slide="0"></button>
-            <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-slide="1"></button>
-            <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-slide="2"></button>
+                <!-- Slide 1 -->
+                <div class="slide active absolute inset-0">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-red-900/20 z-15"></div>
+                    <img src="images/meditation.jpg" 
+                         alt="Meditation in nature" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center z-20 p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs">
+                            <h2 class="text-lg sm:text-xl lg:text-2xl font-light mb-2 leading-tight">Breathe <span class="text-red-300 font-bold">Mindfully</span></h2>
+                            <p class="text-sm sm:text-sm lg:text-base mb-3 opacity-90">Connect with your breath and discover the power of mindful living</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide absolute inset-0">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-red-900/20 z-15"></div>
+                    <img src="images/yoga-1.jpg" 
+                         alt="Yoga class in peaceful studio" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center z-20 p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs">
+                            <h2 class="text-lg sm:text-xl lg:text-2xl font-light mb-2 leading-tight">Find Your <span class="text-red-300 font-bold">Inner Peace</span></h2>
+                            <p class="text-sm sm:text-sm lg:text-base mb-3 opacity-90">Transform your mind, body, and spirit through ancient practices</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide absolute inset-0">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-red-900/20 z-15"></div>
+                    <img src="images/yoga-2.jpg" 
+                         alt="Peaceful yoga pose" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center z-20 p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs">
+                            <h2 class="text-lg sm:text-xl lg:text-2xl font-light mb-2 leading-tight">Strengthen <span class="text-red-300 font-bold">Your Body</span></h2>
+                            <p class="text-sm sm:text-sm lg:text-base mb-3 opacity-90">Build flexibility, strength, and balance through expert guidance</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide Navigation Dots -->
+                <div class="absolute bottom-2 sm:bottom-3 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
+                    <button class="slide-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300 active" data-slide="0"></button>
+                    <button class="slide-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-slide="1"></button>
+                    <button class="slide-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300" data-slide="2"></button>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-1 sm:p-1.5 rounded-full transition-all duration-300" id="prevSlide">
+                    <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button class="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-1 sm:p-1.5 rounded-full transition-all duration-300" id="nextSlide">
+                    <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-
-        <!-- Navigation Arrows -->
-        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300" id="prevSlide">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-        </button>
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300" id="nextSlide">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-        </button>
     </section>
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
