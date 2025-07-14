@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Healing - Ashtanga Vinyansa Yoga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+       
+        .mobile-menu {
+            display: none;
+        }
+       
+        .mobile-menu.active {
+            display: block;
+        }
+       
+        /* Custom red color palette */
+        :root {
+            --red-50: #fef2f2;
+            --red-100: #fee2e2;
+            --red-200: #fecaca;
+            --red-500: #dc2626;
+            --red-600: #dc2626;
+            --red-700: #b91c1c;
+            --red-800: #991b1b;
+        }
+        
+        .feature-box {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Sound wave animation */
+        @keyframes soundWave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.5); }
+        }
+
+        .sound-wave {
+            animation: soundWave 2s ease-in-out infinite;
+        }
+
+        .sound-wave:nth-child(1) { animation-delay: 0s; }
+        .sound-wave:nth-child(2) { animation-delay: 0.2s; }
+        .sound-wave:nth-child(3) { animation-delay: 0.4s; }
+        .sound-wave:nth-child(4) { animation-delay: 0.6s; }
+        .sound-wave:nth-child(5) { animation-delay: 0.8s; }
+
+        /* Ripple effect */
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .ripple {
+            animation: ripple 3s ease-out infinite;
+        }
+
+        .ripple:nth-child(1) { animation-delay: 0s; }
+        .ripple:nth-child(2) { animation-delay: 1s; }
+        .ripple:nth-child(3) { animation-delay: 2s; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="images/yogaLogo.png" alt="Ashtanga Vinyansa Yoga Logo" class="h-10 mr-2" />
+                <h1 class="text-2xl font-bold text-red-600">Ashtanga Vinyansa Yoga</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-red-600 transition-colors">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-red-600 transition-colors">About</a>
+                <a href="index.html#classes" class="text-gray-700 hover:text-red-600 transition-colors">Classes</a>
+                <a href="sound.html" class="text-red-600 font-semibold">Sound Healing</a>
+                <a href="reiki.html" class="text-gray-700 hover:text-red-600 transition-colors">Reiki</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-red-600 transition-colors">Contact</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <nav class="flex flex-col space-y-4 p-4">
+                <a href="index.html" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">About</a>
+                <a href="index.html#classes" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Classes</a>
+                <a href="sound.html" class="text-red-600 font-semibold mobile-link">Sound Healing</a>
+                <a href="reiki.html" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Reiki</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl md:text-6xl font-bold text-red-800 mb-6">Sound Healing</h1>
+                    <p class="text-xl text-red-600 mb-8 max-w-3xl mx-auto">
+                        Experience the transformative power of sound therapy through singing bowls, 
+                        chakra balancing, and vibrational healing
+                    </p>
+                    
+                    <!-- Animated Sound Waves -->
+                    <div class="flex justify-center items-center space-x-2 mb-8">
+                        <div class="sound-wave w-1 h-8 bg-red-500 rounded-full"></div>
+                        <div class="sound-wave w-1 h-12 bg-red-500 rounded-full"></div>
+                        <div class="sound-wave w-1 h-16 bg-red-500 rounded-full"></div>
+                        <div class="sound-wave w-1 h-12 bg-red-500 rounded-full"></div>
+                        <div class="sound-wave w-1 h-8 bg-red-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Section -->
+                <div class="relative">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="relative">
+                            <img src="images/soundHero.jpeg" alt="Sound Healing Session" 
+                                 class="w-full h-96 object-cover rounded-3xl shadow-2xl">
+                            
+                            <!-- Ripple Effect Overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="relative w-48 h-48">
+                                    <div class="ripple absolute inset-0 border-2 border-white rounded-full"></div>
+                                    <div class="ripple absolute inset-0 border-2 border-white rounded-full"></div>
+                                    <div class="ripple absolute inset-0 border-2 border-white rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold text-red-700 mb-4">Healing Frequencies</h3>
+                                <p class="text-gray-700">
+                                    Sound healing uses specific frequencies and vibrations to restore balance 
+                                    and harmony to your mind, body, and spirit.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold text-red-700 mb-4">Singing Bowls</h3>
+                                <p class="text-gray-700">
+                                    Experience the pure tones of Tibetan singing bowls that help clear 
+                                    energy blockages and promote deep relaxation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Sound Healing Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">What is Sound Healing?</h2>
+                
+                <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+                    <p class="text-center text-xl leading-relaxed mb-8">
+                        Sound healing is an ancient practice that uses vibrations and frequencies to promote 
+                        healing and wellness. Through the power of sound, we can access deep states of 
+                        relaxation, reduce stress, and restore balance to our energy systems.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🎵</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-4">Vibrational Healing</h3>
+                        <p class="text-gray-600">
+                            Sound waves penetrate deep into the body, promoting cellular healing and 
+                            restoring natural frequencies.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🧘</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-4">Deep Relaxation</h3>
+                        <p class="text-gray-600">
+                            Enter profound states of relaxation that allow your body's natural 
+                            healing mechanisms to activate.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-4">Energy Balancing</h3>
+                        <p class="text-gray-600">
+                            Harmonize your chakras and energy centers through specific sound 
+                            frequencies and vibrations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-red-800 text-center mb-16">Benefits of Sound Healing</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="heart" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Emotional Healing</h3>
+                        <p class="text-gray-600">
+                            Reduce stress, anxiety, and depression by calming the mind and creating deep emotional relaxation.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="eye" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Inner Harmony & Awareness</h3>
+                        <p class="text-gray-600">
+                            Expand self-awareness, connect with your inner self, and achieve a state of balance and harmony.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="zap" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Pain & Physical Relief</h3>
+                        <p class="text-gray-600">
+                            Alleviate physical discomfort, support healthy blood pressure, and assist with heart and body healing.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="leaf" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Holistic Healing</h3>
+                        <p class="text-gray-600">
+                            Support mental and physical recovery from small complications and restore overall well-being naturally.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="star" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Spiritual Connection</h3>
+                        <p class="text-gray-600">
+                            Deepen your spiritual practice and open pathways for spiritual growth and connection.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="activity" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Scientific Sound Therapy</h3>
+                        <p class="text-gray-600">
+                            Sound therapy aligns with modern science, using sound waves similar to those in medical technologies like ultrasound.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-red-800 text-center mb-12">Subjects Covered in Sound Healing Training</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Self Chakra Healing</h3>
+                        <p class="text-gray-600">
+                            Learn to heal and balance your own chakras to maintain inner harmony and energy flow.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Vedic Sound System</h3>
+                        <p class="text-gray-600">
+                            Explore ancient Vedic sound techniques to deepen your healing practice and spiritual connection.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Tibetan Therapy</h3>
+                        <p class="text-gray-600">
+                            Discover Tibetan sound healing methods using singing bowls and traditional instruments.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Opening the Third Eye</h3>
+                        <p class="text-gray-600">
+                            Activate your intuition and higher perception through focused sound techniques.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Stress & Depression Therapy</h3>
+                        <p class="text-gray-600">
+                            Use sound healing to alleviate stress, reduce anxiety, and support emotional well-being.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Group Healing Sessions</h3>
+                        <p class="text-gray-600">
+                            Experience collective energy transformation and deep relaxation in group sound healing sessions.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Brainwave Therapy</h3>
+                        <p class="text-gray-600">
+                            Balance and harmonize brainwave activity to improve focus, calm the mind, and promote healing.
+                        </p>
+                    </div>
+
+                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Quick Relaxation Techniques</h3>
+                        <p class="text-gray-600">
+                            Learn practical sound-based techniques for rapid stress relief and instant relaxation.
+                        </p>
+                    </div>
+                </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Chakra Notes Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-red-800 mb-12">Chakras & Singing Bowl Notes</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Different singing bowl notes help balance each chakra, promoting harmony and healing.
+                </p>
+
+                <div class="space-y-4 text-left mx-auto max-w-md">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Root Chakra — <span class="text-red-600">C Note</span></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Sacral Chakra — <span class="text-orange-600">D Note</span></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Solar Plexus Chakra — <span class="text-yellow-600">E Note</span></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Heart Chakra — <span class="text-green-600">F Note</span></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Throat Chakra — <span class="text-blue-600">G Note</span></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-indigo-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Third Eye Chakra — <span class="text-indigo-600">A Note</span></span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-purple-500 rounded-full"></div>
+                        <span class="font-medium text-gray-700">Crown Chakra — <span class="text-purple-600">B Note</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+    <!-- Session Types Section -->
+    <section class="py-20 bg-red-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-red-800 mb-12">What we provide</h2>
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden mx-auto">
+            <img
+            src="images/soundSection.jpeg"
+            alt="Individual Session"
+            class="w-full h-64 object-cover"
+            />
+            <div class="p-8">
+            <h3 class="text-2xl font-semibold text-red-800 mb-4">Individual Sessions</h3>
+            <p class="text-gray-600 mb-6">
+                Personalized one-on-one sound healing sessions tailored to your specific needs.
+            </p>
+            <ul class="text-base text-gray-600 space-y-2 text-left inline-block">
+                <li>• 60-minute session</li>
+                <li>• Customized frequency selection</li>
+                <li>• Personal consultation</li>
+                <li>• Chakra assessment</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready to Experience Sound Healing?</h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Join us for a transformative sound healing session and discover the power of vibrational therapy.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#contact" 
+                       class="bg-white text-red-600 px-12 py-4 rounded-lg font-semibold hover:bg-red-50 transition-colors text-2xl">
+                        Book a Session
+                    </a>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-4">Ashtanga Vinyansa Yoga</h3>
+                <p class="text-red-200 mb-8">
+                    Transform your body, mind, and spirit through the practice of yoga and sound healing
+                </p>
+                
+                <div class="border-t border-red-700 pt-8">
+                    <p class="text-red-200">
+                        © 2025 Ashtanga Vinyansa Yoga. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
