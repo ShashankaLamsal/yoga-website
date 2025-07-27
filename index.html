@@ -405,101 +405,108 @@
         </div>
     </div>
 </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-red-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">Get in Touch</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-semibold text-red-700 mb-6">Contact Information</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <i data-lucide="map-pin" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Location</h4>
-                                    <p class="text-gray-600">Kalanki-14<br>Kathmandu</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i data-lucide="phone" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Phone</h4>
-                                    <p class="text-gray-600">9841036903, 9808991511</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i data-lucide="mail" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Email</h4>
-                                    <p class="text-gray-600">hello@vinyasayoga.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i data-lucide="clock" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Class Times</h4>
-                                    <p class="text-gray-600">
-                                        Morning: 5:30am to 8:30am<br>
-                                        Day: 3:00pm to 6:30pm
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-semibold text-red-700 mb-6">Send us a Message</h3>
-                        
-                        <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-gray-700 mb-2">Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"
-                                    placeholder="Your Name"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-gray-700 mb-2">Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"
-                                    placeholder="your@email.com"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-gray-700 mb-2">Message</label>
-                                <textarea
-                                    id="message"
-                                    rows="5"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"
-                                    placeholder="Tell us about your yoga goals..."
-                                ></textarea>
-                            </div>
-                            
-                            <button
-                                type="submit"
-                                class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
+<section id="contact" class="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-white text-center mb-12">Get in Touch</h2>
+
+      <!-- Flex container for info and map -->
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Contact Info -->
+        <div class="w-full lg:w-1/2">
+          <div class="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 h-full">
+            <h3 class="text-2xl font-semibold text-red-700 mb-8 text-center">Contact Information</h3>
+
+            <div class="space-y-6">
+              <!-- Location -->
+              <div class="flex items-start">
+                <i data-lucide="map-pin" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-800">Location</h4>
+                  <p class="text-gray-600">Kalanki-14<br>Kathmandu</p>
                 </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-start">
+                <i data-lucide="phone" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-gray-800 mb-2">Phone</h4>
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-600">9841036903</p>
+                      <a href="tel:9841036903"
+                        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors inline-flex items-center">
+                        <i data-lucide="phone" class="w-4 h-4 mr-1"></i>
+                        Call
+                      </a>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-600">9808991511</p>
+                      <a href="tel:9808991511"
+                        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors inline-flex items-center">
+                        <i data-lucide="phone" class="w-4 h-4 mr-1"></i>
+                        Call
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start">
+                <i data-lucide="mail" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-gray-800">Email</h4>
+                  <div class="flex items-center justify-between mt-2">
+                    <p class="text-gray-600">Limbunisha12345@gmail.com</p>
+                    <a href="mailto:hello@vinyasayoga.com"
+                      class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors inline-flex items-center">
+                      <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
+                      Email
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Class Times -->
+              <div class="flex items-start">
+                <i data-lucide="clock" class="text-red-600 mt-1 mr-4 w-5 h-5"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-800">Class Times</h4>
+                  <p class="text-gray-600">
+                    Morning: 5:30am to 8:30am<br>
+                    Day: 3:00pm to 6:30pm
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+
+        <!-- Map -->
+        <div class="w-full lg:w-1/2">
+          <div class="rounded-2xl overflow-hidden shadow-xl border border-white/20 h-full min-h-[400px]">
+            <iframe
+              class="w-full h-full"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.759512371188!2d85.2808328109921!3d27.69382677609101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19c3dd907d33%3A0x44c747b663354f67!2sAshtanga%20Vinyasa%20Yoga%20Kalanki!5e0!3m2!1sen!2snp!4v1753597928772!5m2!1sen!2snp" 
+              
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-red-800 text-white py-12">
@@ -520,5 +527,11 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+</script>
 </body>
 </html>
