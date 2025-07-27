@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reiki Healing - Ashtanga Vinyansa Yoga</title>
+    <title>Reiki Healing - Ashtanga Vinyasa Yoga</title>
+    <link rel="icon" type="image/png" href="images/yoga.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
@@ -19,30 +20,41 @@
             display: block;
         }
        
-        /* Custom red color palette */
+        /* Updated Pastel Red Color Palette */
         :root {
-            --red-50: #fef2f2;
-            --red-100: #fee2e2;
-            --red-200: #fecaca;
-            --red-500: #dc2626;
-            --red-600: #dc2626;
-            --red-700: #b91c1c;
-            --red-800: #991b1b;
+            --pastel-red-50: #fef7f7;
+            --pastel-red-100: #fdeaea;
+            --pastel-red-200: #fbd5d5;
+            --pastel-red-300: #f8b4b4;
+            --pastel-red-400: #f87171;
+            --pastel-red-500: #ef4444;
+            --pastel-red-600: #dc2626;
+            --pastel-red-700: #b91c1c;
+            --pastel-red-800: #991b1b;
+            
+            /* Complementary pastels */
+            --pastel-pink: #fce7f3;
+            --pastel-purple: #f3e8ff;
+            --pastel-blue: #dbeafe;
+            --pastel-green: #d1fae5;
+            --pastel-yellow: #fef3c7;
         }
         
         .feature-box {
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, #fef7f7 0%, #fdeaea 100%);
         }
         
         .feature-box:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(239, 68, 68, 0.15);
+            background: linear-gradient(135deg, #fdeaea 0%, #fbd5d5 100%);
         }
 
         /* Energy pulse animation */
         @keyframes energyPulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 0.9; }
         }
 
         .energy-pulse {
@@ -56,7 +68,7 @@
         /* Floating particles */
         @keyframes floatUp {
             0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-            50% { opacity: 1; }
+            50% { opacity: 0.8; }
             100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
         }
 
@@ -82,8 +94,8 @@
 
         /* Healing aura */
         @keyframes healingAura {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.6; }
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.1); opacity: 0.7; }
         }
 
         .healing-aura {
@@ -93,61 +105,80 @@
         .healing-aura:nth-child(1) { animation-delay: 0s; }
         .healing-aura:nth-child(2) { animation-delay: 1.3s; }
         .healing-aura:nth-child(3) { animation-delay: 2.6s; }
+
+        /* Custom gradient backgrounds */
+        .pastel-gradient-1 {
+            background: linear-gradient(135deg, #fef7f7 0%, #f3e8ff 50%, #dbeafe 100%);
+        }
+        
+        .pastel-gradient-2 {
+            background: linear-gradient(135deg, #fce7f3 0%, #fef3c7 50%, #d1fae5 100%);
+        }
+
+        .pastel-card {
+            background: rgba(254, 247, 247, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(239, 68, 68, 0.1);
+        }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-gradient-to-br from-red-50 via-pink-50 to-purple-50">
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-lg z-50 border-b border-red-100">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="images/yogaLogo.png" alt="Ashtanga Vinyansa Yoga Logo" class="h-10 mr-2" />
-                <h1 class="text-2xl font-bold text-red-600">Ashtanga Vinyansa Yoga</h1>
+                <img src="images/yogaLogo.png" alt="Ashtanga Vinyasa Yoga Logo" class="h-10 mr-2" />
+                <h1 class="text-2xl font-bold text-red-500">Ashtanga Vinyasa Yoga</h1>
             </div>
             
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-700 hover:text-red-600 transition-colors">Home</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-red-600 transition-colors">About</a>
-                <a href="index.html#classes" class="text-gray-700 hover:text-red-600 transition-colors">Classes</a>
-                <a href="sound.html" class="text-gray-700 hover:text-red-600 transition-colors">Sound Healing</a>
-                <a href="reiki.html" class="text-red-600 font-semibold">Reiki</a>
-                <a href="index.html#contact" class="text-gray-700 hover:text-red-600 transition-colors">Contact</a>
+                <a href="index.html" class="text-gray-600 hover:text-red-400 transition-colors font-medium">Home</a>
+                <a href="index.html#about" class="text-gray-600 hover:text-red-400 transition-colors font-medium">About</a>
+                <a href="index.html#classes" class="text-gray-600 hover:text-red-400 transition-colors font-medium">Classes</a>
+                <a href="sound.html" class="text-gray-600 hover:text-red-400 transition-colors font-medium">Sound Healing</a>
+                <a href="reiki.html" class="text-red-400 font-semibold bg-red-50 px-3 py-1 rounded-full">Reiki</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-red-400 transition-colors font-medium">Contact</a>
             </nav>
 
             <button id="mobile-menu-btn" class="md:hidden">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+                <i data-lucide="menu" class="w-6 h-6 text-red-400"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-md border-t border-red-100">
             <nav class="flex flex-col space-y-4 p-4">
-                <a href="index.html" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Home</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">About</a>
-                <a href="index.html#classes" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Classes</a>
-                <a href="sound.html" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Sound Healing</a>
-                <a href="reiki.html" class="text-red-600 font-semibold mobile-link">Reiki</a>
-                <a href="index.html#contact" class="text-gray-700 hover:text-red-600 transition-colors mobile-link">Contact</a>
+                <a href="index.html" class="text-gray-600 hover:text-red-400 transition-colors mobile-link">Home</a>
+                <a href="index.html#about" class="text-gray-600 hover:text-red-400 transition-colors mobile-link">About</a>
+                <a href="index.html#classes" class="text-gray-600 hover:text-red-400 transition-colors mobile-link">Classes</a>
+                <a href="sound.html" class="text-gray-600 hover:text-red-400 transition-colors mobile-link">Sound Healing</a>
+                <a href="reiki.html" class="text-red-400 font-semibold mobile-link">Reiki</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-red-400 transition-colors mobile-link">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-red-50 via-purple-50 to-blue-50">
+    <section class="pt-24 pb-16 pastel-gradient-1">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h1 class="text-5xl md:text-6xl font-bold text-red-800 mb-6">Reiki Healing</h1>
-                    <p class="text-xl text-red-600 mb-8 max-w-3xl mx-auto">
-                        Experience the gentle, yet powerful healing energy of Reiki to restore balance, 
-                        reduce stress, and promote natural healing
-                    </p>
-                    
-                    <!-- Animated Energy Pulses -->
-                    <div class="flex justify-center items-center mb-8">
-                        <div class="relative w-32 h-32">
-                            <div class="energy-pulse absolute inset-0 w-8 h-8 bg-red-400 rounded-full mx-auto my-auto"></div>
-                            <div class="energy-pulse absolute inset-0 w-16 h-16 bg-red-300 rounded-full mx-auto my-auto"></div>
-                            <div class="energy-pulse absolute inset-0 w-24 h-24 bg-red-200 rounded-full mx-auto my-auto"></div>
+               <div class="text-center mb-16 relative">
+                    <!-- Animated Energy Pulses - Behind Title -->
+                    <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                        <div class="relative w-40 h-40">
+                            <div class="energy-pulse absolute inset-0 w-12 h-12 bg-red-300/40 rounded-full mx-auto my-auto"></div>
+                            <div class="energy-pulse absolute inset-0 w-24 h-24 bg-pink-300/30 rounded-full mx-auto my-auto"></div>
+                            <div class="energy-pulse absolute inset-0 w-32 h-32 bg-purple-300/20 rounded-full mx-auto my-auto"></div>
+                            <div class="energy-pulse absolute inset-0 w-60 h-60 bg-blue-300/15 rounded-full mx-auto my-auto"></div>
                         </div>
+                    </div>
+                    
+                    <!-- Content - In Front -->
+                    <div class="relative z-10">
+                        <h1 class="text-5xl md:text-6xl font-bold text-red-600 mb-6">Reiki Healing</h1>
+                        <p class="text-xl text-red-500 mb-8 max-w-3xl mx-auto">
+                            Experience the gentle, yet powerful healing energy of Reiki to restore balance,
+                            reduce stress, and promote natural healing
+                        </p>
                     </div>
                 </div>
 
@@ -160,25 +191,25 @@
                             
                             <!-- Floating Particles Overlay -->
                             <div class="absolute inset-0 overflow-hidden rounded-3xl">
-                                <div class="floating-particle absolute bottom-10 left-10 w-2 h-2 bg-yellow-400 rounded-full"></div>
-                                <div class="floating-particle absolute bottom-20 right-20 w-3 h-3 bg-blue-300 rounded-full"></div>
-                                <div class="floating-particle absolute bottom-16 left-1/2 w-2 h-2 bg-purple-400 rounded-full"></div>
-                                <div class="floating-particle absolute bottom-12 right-10 w-2 h-2 bg-green-400 rounded-full"></div>
-                                <div class="floating-particle absolute bottom-24 left-20 w-3 h-3 bg-pink-300 rounded-full"></div>
+                                <div class="floating-particle absolute bottom-10 left-10 w-2 h-2 bg-red-300 rounded-full"></div>
+                                <div class="floating-particle absolute bottom-20 right-20 w-3 h-3 bg-pink-300 rounded-full"></div>
+                                <div class="floating-particle absolute bottom-16 left-1/2 w-2 h-2 bg-purple-300 rounded-full"></div>
+                                <div class="floating-particle absolute bottom-12 right-10 w-2 h-2 bg-blue-300 rounded-full"></div>
+                                <div class="floating-particle absolute bottom-24 left-20 w-3 h-3 bg-yellow-300 rounded-full"></div>
                             </div>
                         </div>
                         
                         <div class="space-y-6">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                                <h3 class="text-2xl font-bold text-red-700 mb-4">Universal Life Energy</h3>
+                            <div class="pastel-card p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold text-red-600 mb-4">Universal Life Energy</h3>
                                 <p class="text-gray-700">
                                     Reiki channels universal life force energy through gentle touch to promote 
                                     healing, relaxation, and spiritual growth.
                                 </p>
                             </div>
                             
-                            <div class="bg-white p-6 rounded-2xl shadow-lg">
-                                <h3 class="text-2xl font-bold text-red-700 mb-4">Gentle Touch Healing</h3>
+                            <div class="pastel-card p-6 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold text-red-600 mb-4">Gentle Touch Healing</h3>
                                 <p class="text-gray-700">
                                     Experience the power of healing touch as energy flows through your body, 
                                     clearing blockages and restoring natural balance.
@@ -192,10 +223,10 @@
     </section>
 
     <!-- What is Reiki Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white/60 backdrop-blur-sm">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">What is Reiki?</h2>
+                <h2 class="text-4xl font-bold text-red-600 text-center mb-12">What is Reiki?</h2>
                 
                 <div class="prose prose-lg max-w-none text-gray-700 mb-12">
                     <p class="text-center text-xl leading-relaxed mb-8">
@@ -206,33 +237,33 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
+                    <div class="text-center pastel-card p-6 rounded-2xl">
                         <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-3xl">🙏</span>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-4">Energy Healing</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-4">Energy Healing</h3>
                         <p class="text-gray-600">
                             Channel universal life force energy through gentle hand placements to 
                             promote natural healing processes.
                         </p>
                     </div>
                     
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div class="text-center pastel-card p-6 rounded-2xl">
+                        <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-3xl">🌸</span>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-4">Holistic Wellness</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-4">Holistic Wellness</h3>
                         <p class="text-gray-600">
                             Address the whole person - body, mind, and spirit - for complete 
                             healing and balanced well-being.
                         </p>
                     </div>
                     
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div class="text-center pastel-card p-6 rounded-2xl">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-3xl">✨</span>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-4">Spiritual Growth</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-4">Spiritual Growth</h3>
                         <p class="text-gray-600">
                             Enhance your spiritual journey and connect with your inner wisdom 
                             through this ancient healing practice.
@@ -244,67 +275,67 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-20 bg-red-50">
+    <section class="py-20 pastel-gradient-2">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-red-800 text-center mb-16">Benefits of Reiki Healing</h2>
+                <h2 class="text-4xl font-bold text-red-600 text-center mb-16">Benefits of Reiki Healing</h2>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="shield" class="w-6 h-6 text-red-600"></i>
+                    <div class="feature-box p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-red-200 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="shield" class="w-6 h-6 text-red-500"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-3">Stress Reduction</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">Stress Reduction</h3>
                         <p class="text-gray-600">
                             Experience deep relaxation and stress relief as Reiki energy calms your nervous system and promotes peace.
                         </p>
                     </div>
 
-                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="sparkles" class="w-6 h-6 text-red-600"></i>
+                    <div class="feature-box p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-pink-200 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-pink-500"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-3">Energy Balance</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">Energy Balance</h3>
                         <p class="text-gray-600">
                             Restore harmony to your energy centers and clear blockages that may be affecting your well-being.
                         </p>
                     </div>
 
-                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="heart-handshake" class="w-6 h-6 text-red-600"></i>
+                    <div class="feature-box p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-purple-200 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="heart-handshake" class="w-6 h-6 text-purple-500"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-3">Emotional Healing</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">Emotional Healing</h3>
                         <p class="text-gray-600">
                             Release emotional trauma, reduce anxiety, and cultivate inner peace through gentle energy work.
                         </p>
                     </div>
 
-                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="moon" class="w-6 h-6 text-red-600"></i>
+                    <div class="feature-box p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-blue-200 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="moon" class="w-6 h-6 text-blue-500"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-3">Better Sleep</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">Better Sleep</h3>
                         <p class="text-gray-600">
                             Improve sleep quality and overcome insomnia through deep relaxation and energy balancing.
                         </p>
                     </div>
 
-                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="activity" class="w-6 h-6 text-red-600"></i>
+                    <div class="feature-box p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-green-200 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="activity" class="w-6 h-6 text-green-500"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-3">Physical Healing</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">Physical Healing</h3>
                         <p class="text-gray-600">
                             Support your body's natural healing processes and reduce physical discomfort through energy work.
                         </p>
                     </div>
 
-                    <div class="feature-box bg-white p-6 rounded-2xl shadow-lg">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="sun" class="w-6 h-6 text-red-600"></i>
+                    <div class="feature-box p-6 rounded-2xl shadow-lg">
+                        <div class="w-12 h-12 bg-yellow-200 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="sun" class="w-6 h-6 text-yellow-500"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-red-800 mb-3">Mental Clarity</h3>
+                        <h3 class="text-xl font-semibold text-red-600 mb-3">Mental Clarity</h3>
                         <p class="text-gray-600">
                             Enhance focus, reduce mental fog, and gain clarity through the balancing effects of Reiki energy.
                         </p>
@@ -316,55 +347,53 @@
     </section>
 
     <!-- Reiki Principles Section -->
-    <section class="py-20 bg-white">
+    <section class="py-12 bg-white/60 backdrop-blur-sm">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-red-800 text-center mb-16">The Five Reiki Principles</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-red-600 text-center mb-10">The Five Reiki Principles</h2>
+            
+                <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <img src="images/reikiSection.jpg" alt="Reiki Principles" 
-                             class="w-full h-96 object-cover rounded-3xl shadow-2xl">
-                        
-                        <!-- Healing Aura Overlay -->
-                        <div class="relative -mt-96 h-96 flex items-center justify-center">
-                            <div class="healing-aura absolute w-28 h-28 rounded-full" style="background-color: rgba(240, 227, 138, 0.4);"></div> <!-- yellow-200 with opacity -->
-                            <div class="healing-aura absolute w-48 h-48 rounded-full" style="background-color: rgba(191, 219, 254, 0.3);"></div> <!-- blue-100 with opacity -->
-                            <div class="healing-aura absolute w-64 h-64 rounded-full" style="background-color: rgba(233, 213, 255, 0.3);"></div> <!-- purple-100 with opacity -->
-                        </div>
-
-                    </div>
+                        <img src="images/reikiSection.jpg" alt="Reiki Principles"
+                            class="w-full h-64 object-cover rounded-2xl shadow-lg">
                     
-                    <div class="space-y-6">
-                        <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                            The Reiki principles serve as a guide for living a more mindful, peaceful life. 
-                            These timeless teachings help us cultivate inner peace and compassion.
+                        <!-- Healing Aura Overlay -->
+                        <div class="relative -mt-64 h-64 flex items-center justify-center">
+                            <div class="healing-aura absolute w-20 h-20 rounded-full" style="background-color: rgba(253, 224, 71, 0.4);"></div>
+                            <div class="healing-aura absolute w-32 h-32 rounded-full" style="background-color: rgba(147, 197, 253, 0.3);"></div>
+                            <div class="healing-aura absolute w-40 h-40 rounded-full" style="background-color: rgba(196, 181, 253, 0.3);"></div>
+                        </div>
+                    </div>
+                
+                    <div class="space-y-4">
+                        <p class="text-base text-gray-700 leading-relaxed mb-6">
+                            Five principles guiding mindful living and inner peace.
                         </p>
+                    
+                        <div class="space-y-3">
+                            <div class="bg-red-100/70 p-4 rounded-xl border border-red-200">
+                                <h3 class="text-base font-semibold text-red-600">Don't worry</h3>
+                                <p class="text-sm text-gray-600">Trust life's natural flow</p>
+                            </div>
                         
-                        <div class="space-y-6">
-                            <div class="bg-red-50 p-6 rounded-2xl">
-                                <h3 class="text-lg font-semibold text-red-800 mb-2">Just for today, I will not worry</h3>
-                                <p class="text-gray-600">Release anxiety and trust in the natural flow of life.</p>
+                            <div class="bg-pink-100/70 p-4 rounded-xl border border-pink-200">
+                                <h3 class="text-base font-semibold text-red-600">Don't anger</h3>
+                                <p class="text-sm text-gray-600">Cultivate patience and understanding</p>
                             </div>
-                            
-                            <div class="bg-red-50 p-6 rounded-2xl">
-                                <h3 class="text-lg font-semibold text-red-800 mb-2">Just for today, I will not be angry</h3>
-                                <p class="text-gray-600">Cultivate patience and understanding in all situations.</p>
+                        
+                            <div class="bg-purple-100/70 p-4 rounded-xl border border-purple-200">
+                                <h3 class="text-base font-semibold text-red-600">Be grateful</h3>
+                                <p class="text-sm text-gray-600">Appreciate everyday blessings</p>
                             </div>
-                            
-                            <div class="bg-red-50 p-6 rounded-2xl">
-                                <h3 class="text-lg font-semibold text-red-800 mb-2">Just for today, I will be grateful</h3>
-                                <p class="text-gray-600">Appreciate the blessings and beauty in everyday life.</p>
+                        
+                            <div class="bg-blue-100/70 p-4 rounded-xl border border-blue-200">
+                                <h3 class="text-base font-semibold text-red-600">Work honestly</h3>
+                                <p class="text-sm text-gray-600">Approach tasks with integrity</p>
                             </div>
-                            
-                            <div class="bg-red-50 p-6 rounded-2xl">
-                                <h3 class="text-lg font-semibold text-red-800 mb-2">Just for today, I will work honestly</h3>
-                                <p class="text-gray-600">Approach all tasks with integrity and dedication.</p>
-                            </div>
-                            
-                            <div class="bg-red-50 p-6 rounded-2xl">
-                                <h3 class="text-lg font-semibold text-red-800 mb-2">Just for today, I will be kind</h3>
-                                <p class="text-gray-600">Show compassion to all living beings, including yourself.</p>
+                        
+                            <div class="bg-green-100/70 p-4 rounded-xl border border-green-200">
+                                <h3 class="text-base font-semibold text-red-600">Be kind</h3>
+                                <p class="text-sm text-gray-600">Show compassion to all beings</p>
                             </div>
                         </div>
                     </div>
@@ -374,44 +403,28 @@
     </section>
 
     <!-- Session Types Section -->
-    <section class="py-20 bg-red-50">
+    <section class="py-20 pastel-gradient-1">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold text-red-800 text-center mb-12">What we provide</h2>
-
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <!-- Main session card -->
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                        <img src="images/reiki-individual.jpg" alt="Individual Reiki Session" 
-                            class="w-full h-64 object-cover"/>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-red-800 mb-4">Individual Reiki Sessions</h3>
-                            <p class="text-gray-600 mb-6">
-                                Personalized one-on-one Reiki healing sessions tailored to your specific needs and goals.
-                            </p>
-                            <ul class="text-base text-gray-600 space-y-2 text-left">
-                                <li>• 60–75 minute session</li>
-                                <li>• Full body energy healing</li>
-                                <li>• Chakra balancing</li>
-                                <li>• Personal consultation</li>
-                                <li>• Deep relaxation techniques</li>
-                            </ul>
+                <h2 class="text-4xl font-bold text-red-600 text-center mb-12">What we provide</h2>
+                    <div class="flex justify-center">
+                        <!-- Main session card -->
+                        <div class="pastel-card rounded-2xl shadow-xl overflow-hidden max-w-md w-full border border-red-200">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-semibold text-red-600 mb-4 text-center">Individual Reiki Sessions</h3>
+                                <p class="text-gray-600 mb-6 text-center">
+                                    Personalized one-on-one Reiki healing sessions tailored to your specific needs and goals.
+                                </p>
+                                <ul class="text-base text-gray-600 space-y-2 text-center">
+                                    <li>• 60–75 minute session</li>
+                                    <li>• Full body energy healing</li>
+                                    <li>• Chakra balancing</li>
+                                    <li>• Personal consultation</li>
+                                    <li>• Deep relaxation techniques</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Supporting images column -->
-                    <div class="space-y-6">
-                        <img src="images/reiki-side1.jpg" alt="Reiki Healing" 
-                            class="w-full h-48 object-cover rounded-2xl shadow-md">
-                        <img src="images/reiki-side2.jpg" alt="Reiki Energy" 
-                            class="w-full h-48 object-cover rounded-2xl shadow-md">
-                        <!-- If you have a third image, add it below -->
-                        <!--
-                        <img src="images/reiki-side3.jpg" alt="Reiki Session" 
-                            class="w-full h-48 object-cover rounded-2xl shadow-md">
-                        -->
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -421,16 +434,16 @@
     <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold mb-6">Ready to Experience Reiki Healing?</h2>
+                <h2 class="text-4xl font-bold mb-6">Ready to Experience Sound Healing?</h2>
                 <p class="text-xl mb-8 opacity-90">
-                    Begin your journey to wellness with a transformative Reiki healing session.
+                    Join us for a transformative sound healing session and discover the power of vibrational therapy.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="index.html#contact" 
-                       class="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors text-2xl">
+                       class="bg-white text-red-600 px-12 py-4 rounded-lg font-semibold hover:bg-red-50 transition-colors text-2xl">
                         Book a Session
                     </a>
-                    
+                
                 </div>
             </div>
         </div>
@@ -440,14 +453,14 @@
     <footer class="bg-red-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-2xl font-bold mb-4">Ashtanga Vinyansa Yoga</h3>
+                <h3 class="text-2xl font-bold mb-4">Ashtanga Vinyasa Yoga</h3>
                 <p class="text-red-200 mb-8">
-                    Transform your body, mind, and spirit through the practice of yoga and energy healing
+                    Transform your body, mind, and spirit through the practice of yoga and sound healing
                 </p>
                 
                 <div class="border-t border-red-700 pt-8">
                     <p class="text-red-200">
-                        © 2025 Ashtanga Vinyansa Yoga. All rights reserved.
+                        © 2025 Ashtanga Vinyasa Yoga. All rights reserved.
                     </p>
                 </div>
             </div>
