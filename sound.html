@@ -455,9 +455,22 @@
             <div class="max-w-4xl mx-auto text-center">
                 <h3 class="text-2xl font-bold mb-4">Ashtanga Vinyasa Yoga</h3>
                 <p class="text-red-200 mb-8">
-                    Transform your body, mind, and spirit through the practice of yoga and sound healing
+                    Transform your body, mind, and spirit through the practice of yoga
                 </p>
                 
+                <!-- Social Media Icons -->
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://www.facebook.com/p/Ashtanga-Vinyasa-Yoga-Kalanki-100089632201933/" class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i data-lucide="facebook" size="24"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ashtanga1515" class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i data-lucide="instagram" size="24"></i>
+                    </a>
+                    <a href="#" class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i data-lucide="youtube" size="24"></i>
+                    </a>
+                </div>
+            
                 <div class="border-t border-red-700 pt-8">
                     <p class="text-red-200">
                         © 2025 Ashtanga Vinyasa Yoga. All rights reserved.
@@ -467,26 +480,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
