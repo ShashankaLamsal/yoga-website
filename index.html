@@ -193,7 +193,7 @@
                 <div class="slide active absolute inset-0">
                     <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
                     <div class="absolute inset-0 bg-red-900/20 z-15"></div>
-                    <img src="images/meditation.jpg" 
+                    <img src="images/slide_2.jpeg" 
                          alt="Meditation in nature" class="w-full h-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center z-20 p-4 sm:p-6">
                         <div class="text-white text-center max-w-xs">
@@ -208,7 +208,7 @@
                 <div class="slide absolute inset-0">
                     <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
                     <div class="absolute inset-0 bg-red-900/20 z-15"></div>
-                    <img src="images/yoga-1.jpg" 
+                    <img src="images/slide_1.jpeg" 
                          alt="Yoga class in peaceful studio" class="w-full h-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center z-20 p-4 sm:p-6">
                         <div class="text-white text-center max-w-xs">
@@ -223,7 +223,7 @@
                 <div class="slide absolute inset-0">
                     <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
                     <div class="absolute inset-0 bg-red-900/20 z-15"></div>
-                    <img src="images/yoga-2.jpg" 
+                    <img src="images/slide_3.jpeg" 
                          alt="Peaceful yoga pose" class="w-full h-full object-cover">
                     <div class="absolute inset-0 flex items-center justify-center z-20 p-4 sm:p-6">
                         <div class="text-white text-center max-w-xs">
@@ -367,31 +367,31 @@
                         <div class="space-y-4">
                             <h4 class="text-xl font-semibold text-red-800 mb-4">Certifications</h4>
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openPopup('images/cer_1.jpeg', 'Reiki First Degree')">
                                     <div class="w-full" style="aspect-ratio: 7/5;">
                                         <img src="images/cer_1.jpeg" alt="Yoga Certification 1" class="w-full h-full object-contain rounded-lg mb-2" />
                                     </div>
                                     <p class="text-sm text-red-700 font-medium text-center">Reiki First Degree</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openPopup('images/cer_2.jpeg', 'Reiki Second Degree')">
                                     <div class="w-full" style="aspect-ratio: 7/5;">
                                         <img src="images/cer_2.jpeg" alt="Yoga Certification 2" class="w-full h-full object-contain rounded-lg mb-2" />
                                     </div>
                                     <p class="text-sm text-red-700 font-medium text-center">Reiki Second Degree</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openPopup('images/cer_3.jpeg', 'Sound Healing Trainer')">
                                     <div class="w-full" style="aspect-ratio: 7/5;">
                                         <img src="images/cer_3.jpeg" alt="Yoga Certification 3" class="w-full h-full object-contain rounded-lg mb-2" />
                                     </div>
                                     <p class="text-sm text-red-700 font-medium text-center">Sound Healing Trainer</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openPopup('images/cer_4.jpeg', 'Reiki Master')">
                                     <div class="w-full" style="aspect-ratio: 7/5;">
                                         <img src="images/cer_4.jpeg" alt="Yoga Certification 4" class="w-full h-full object-contain rounded-lg mb-2" />
                                     </div>
                                     <p class="text-sm text-red-700 font-medium text-center">Reiki Master</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+                                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openPopup('images/cer_5.jpeg', 'Yoga Teacher')">
                                     <div class="w-full" style="aspect-ratio: 7/5;">
                                         <img src="images/cer_5.jpeg" alt="Yoga Certification 5" class="w-full h-full object-contain rounded-lg mb-2" />
                                     </div>
@@ -538,7 +538,18 @@
             </div>
         </div>
     </footer>
-
+    <!-- Popup Modal -->
+    <div id="imagePopup" class="fixed inset-0 bg-black bg-opacity-75 popup-overlay hidden z-50 flex items-center justify-center p-4" onclick="closePopup()">
+        <div class="popup-content max-w-4xl max-h-full relative" onclick="event.stopPropagation()">
+            <button onclick="closePopup()" class="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <img id="popupImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+            <p id="popupCaption" class="text-white text-center mt-4 text-lg font-medium"></p>
+        </div>
+    </div>
     <script src="js/main.js"></script>
     
 </body>
