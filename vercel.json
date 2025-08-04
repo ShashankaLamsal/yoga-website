@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/reiki", "destination": "/reiki.html" },
+    { "source": "/sound", "destination": "/sound.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/reiki.html", "destination": "/reiki", "statusCode": 301 },
+    { "source": "/sound.html", "destination": "/sound", "statusCode": 301 }
+  ]
+}
