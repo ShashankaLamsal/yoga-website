@@ -1,6 +1,3 @@
-import { inject } from '@vercel/analytics';
-
-inject();
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Lucide icons
