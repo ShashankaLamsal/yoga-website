@@ -151,3 +151,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+//Promotional Popup
+window.addEventListener('load', function() {
+    const lastShown = localStorage.getItem('promoPopupShown');
+    const now = Date.now();
+    const oneDayInMs = 24 * 60 * 60 * 1000;
+    
+    // If popup was shown less than 24 hours ago, don't show it
+    if (lastShown && (now - lastShown) < oneDayInMs) {
+        return;
+    }
+    
+    // Show popup after 1 second
+    setTimeout(function() {
+        showPromoPopup();
+    }, 500);
+});
+
+
+function showPromoPopup() {
+    const popup = document.getElementById('promoPopup');
+    popup.classList.add('active');
+    // Prevent body scroll when popup is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closePromoPopup() {
+    const popup = document.getElementById('promoPopup');
+    popup.classList.remove('active');
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+    
+    // Set localStorage to not show again for 24 hours
+    localStorage.setItem('promoPopupShown', Date.now());
+}
+
+// Close popup when clicking outside the image
+document.getElementById('promoPopup').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closePromoPopup();
+    }
+});
