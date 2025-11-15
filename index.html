@@ -119,9 +119,90 @@
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
+
+        /* Popup Modal Styles */
+        .promo-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .promo-popup-overlay.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .promo-popup-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        .promo-popup-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scale(0.8) translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .promo-popup-content {
+                max-width: 95%;
+            }
+            
+            .promo-popup-close {
+                top: -10px;
+                right: -10px;
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
+    <!-- Promotional Popup -->
+    <div id="promoPopup" class="promo-popup-overlay">
+        <div class="promo-popup-content">
+            <button onclick="closePromoPopup()" class="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <img src="images/yoga-popup.jpg" alt="Yoga Classes - Register Now" />
+        </div>
+    </div>
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
@@ -394,7 +475,32 @@
             </div>
         </div>
     </section>
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-gradient-to-br from-gray-50 to-red-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl font-bold text-red-800 text-center mb-4">What Our Students Say</h2>
+            <p class="text-center text-gray-600 mb-12">Hear from our community about their transformative yoga journey</p>
+            
+            <!-- TikTok Videos - 3 Side by Side -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                <!-- Facebook Video 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex items-center justify-center">
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1360142895767212%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+                
 
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex items-center justify-center">
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1545884686762483%2F&show_text=false&width=264&t=0" width="264" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Add TikTok Embed Script before closing body tag -->
+<script async src="https://www.tiktok.com/embed.js"></script>
     <!-- Instructor Section -->
 <section id="instructor" class="py-20 bg-white">
     <div class="container mx-auto px-4">
